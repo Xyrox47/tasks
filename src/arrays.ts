@@ -1,3 +1,5 @@
+import exp from "constants";
+
 /**
  * Consume an array of numbers, and return a new array containing
  * JUST the first and last number. If there are no elements, return
@@ -116,7 +118,15 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+    const sum = addends.reduce(
+        (currentTotal: number, num: number) => currentTotal + num,
+    );
+    const expression = addends.join("+");
+
+    return `${sum}=${expression}`;
 }
 
 /**
@@ -129,5 +139,18 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const firstNegativeIndex = values.findIndex((num) => num < 0);
+
+    const sum = (
+        firstNegativeIndex === -1 ? values : (
+            values.slice(0, firstNegativeIndex)
+        )).reduce((acc, num) => acc + num, 0);
+
+    if (firstNegativeIndex === -1) {
+        return [...values, sum];
+    }
+    const copy = [...values];
+    copy.splice(firstNegativeIndex + 1, 0, sum);
+
+    return copy;
 }
