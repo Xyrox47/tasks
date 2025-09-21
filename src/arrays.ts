@@ -65,7 +65,6 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
     const uppperCased = removeQuestion.map((str: string): string =>
         str.at(-1) === "!" ? str.toUpperCase() : str,
     );
-    console.log(uppperCased);
     return uppperCased;
 };
 
@@ -74,7 +73,9 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const lessThan4 = words.filter((str: string): boolean => str.length <= 3);
+
+    return lessThan4.length;
 }
 
 /**
@@ -83,7 +84,28 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) {
+        return true;
+    }
+
+    const checkedForRed = colors.filter(
+        (str: string): boolean => str !== "red",
+    );
+    const checkedForBlue = checkedForRed.filter(
+        (str: string): boolean => str !== "blue",
+    );
+    const checkedForGreen = checkedForBlue.filter(
+        (str: string): boolean => str !== "green",
+    );
+
+    if (checkedForGreen.length >= 1) {
+        return false;
+    }
+    // const checked = colors.map((str: string): string =>
+    //     str !== "red" || str !== "blue" || str !== "green" ?  : str,
+    // );
+
+    return true;
 }
 
 /**
