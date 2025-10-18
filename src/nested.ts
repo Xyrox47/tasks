@@ -120,7 +120,8 @@ export function addNewQuestion(
     questions: Question[],
     id: number,
     name: string,
-    type: QuestionType,,
+    type: QuestionType,
+    type: QuestionType,
 ): Question[] {
     const newListOfQuestions = [
         ...questions,
@@ -140,7 +141,8 @@ export function addNewQuestion(
 export function renameQuestionById(
     questions: Question[],
     targetId: number,
-    newName: string,,
+    newName: string,
+    newName: string,
 ): Question[] {
     const modifiedQuestions = questions.map(
         (question: Question): Question => ({
@@ -170,6 +172,7 @@ export function editOption(
     questions: Question[],
     targetId: number,
     targetOptionIndex: number,
+    newOption: string,
     newOption: string,
 ): Question[] {
     const modifiedQuestions = questions.map((question: Question): Question => {
