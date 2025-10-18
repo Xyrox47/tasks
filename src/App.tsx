@@ -1,6 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { TwoDice } from "./components/TwoDice";
+import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -8,54 +11,14 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
-            <h1>Xander Watkins</h1>
-            <div>
-                <Container>
-                    <Row>
-                        <Col>
-                            <div>
-                                Things to do in Bucksport
-                                <ul>
-                                    <li>Enjoy icecream at the Dairy Port</li>
-                                    <li>Enjoy a walk on the riverwalk</li>
-                                    <li>Visit The Tomb of Buck</li>
-                                </ul>
-                                <Button
-                                    onClick={() => {
-                                        console.log("Hello World!");
-                                    }}
-                                >
-                                    Log Hello World
-                                </Button>
-                            </div>
-                            <div
-                                style={{
-                                    backgroundColor: "red",
-                                    width: "150px",
-                                    height: "100px",
-                                }}
-                            >
-                                RED
-                            </div>
-                        </Col>
-                        <Col>
-                            <img
-                                src="/assets/images/bridge.jpg"
-                                alt="A picture of the Bucksport Bridge"
-                            />
-                            <div
-                                style={{
-                                    backgroundColor: "red",
-                                    width: "150px",
-                                    height: "100px",
-                                }}
-                            >
-                                RED
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
         </div>
     );
 }
