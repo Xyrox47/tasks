@@ -11,6 +11,8 @@ function App(): React.JSX.Element {
             <header className="App-header">
                 UM COS420 with React Hooks and TypeScript
             </header>
+            <h1>Xander Watkins</h1>
+            <body>Hello World!</body>
             <hr></hr>
             <Counter></Counter>
             <hr />
