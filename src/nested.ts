@@ -35,7 +35,6 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
 export function findQuestion(
     questions: Question[],
     id: number,
-    id: number,
 ): Question | null {
     const lookedForQuestion = questions.find(
         (question: Question): boolean => question.id == id,
@@ -121,7 +120,6 @@ export function addNewQuestion(
     id: number,
     name: string,
     type: QuestionType,
-    type: QuestionType,
 ): Question[] {
     const newListOfQuestions = [
         ...questions,
@@ -141,7 +139,6 @@ export function addNewQuestion(
 export function renameQuestionById(
     questions: Question[],
     targetId: number,
-    newName: string,
     newName: string,
 ): Question[] {
     const modifiedQuestions = questions.map(
@@ -172,7 +169,6 @@ export function editOption(
     questions: Question[],
     targetId: number,
     targetOptionIndex: number,
-    newOption: string,
     newOption: string,
 ): Question[] {
     const modifiedQuestions = questions.map((question: Question): Question => {
